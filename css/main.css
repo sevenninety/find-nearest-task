@@ -1,0 +1,12 @@
+html, body, #map {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+#info {
+	position: absolute;
+	left: 10px;
+	bottom: 5px;
+	color: #000;
+	z-index: 50;
+}
