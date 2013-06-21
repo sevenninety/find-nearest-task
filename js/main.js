@@ -15,7 +15,7 @@ define([
     function(parser, dom, number, Map, FeatureLayer, webMercatorUtils, Query, QueryTask, FindNearestParameters, FindNearestTask) {
     	var app = {
     		// The feature layer to query
-			layerUrl: "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2",
+			layerUrl: "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/1",
 			// Feature layer to work with
 			featureLayer: null, 
 			// Cached featureSet
@@ -132,13 +132,16 @@ define([
 					esri.symbol.SimpleMarkerSymbol.STYLE_CROSS, 30, 
 					new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_DASH, new dojo.Color([0,0,0]), 2)),							
 					query;
-
-				// TODO: we don't want to delete all graphics
+					
+				// TODO: we don't want to clear all graphics only the one added before
 				map.graphics.clear();
 
-				if (result) {			
-					// Draw the click point				
-					map.graphics.add(new esri.Graphic(mapPoint, markerSymbol));
+				if (result) {
+					// Show result information
+					showInfo(result);
+					
+					// Draw the nearest point			
+					map.graphics.add(new esri.Graphic(result.nearestPoint, markerSymbol));
 
 					// Select the nearest feature	
 					query = new Query();
@@ -155,7 +158,17 @@ define([
 		function showCoordinates(evt) {
 			var mp = webMercatorUtils.webMercatorToGeographic(evt.mapPoint);
 			//var mp = evt.mapPoint;
-			dom.byId("info").innerHTML = number.round(mp.x, 3) + ", " + number.round(mp.y, 3);
+			dom.byId("coords").innerHTML = number.round(mp.x, 3) + "," + number.round(mp.y, 3);
+		}
+		
+		function showInfo(result) {
+			var np = result.nearestPoint,
+				nf = result.nearestFeature,
+				npInfo = "Nearest Point: " + number.round(np.x) + "," + number.round(np.y),
+				nfInfo = "Nearest ObjectID: " + nf.attributes.objectid,
+				distInfo = "Distance: " + number.round(result.distance, 1) + "m";
+			
+			dom.byId("info").innerHTML = npInfo + "<br/>" + nfInfo + "<br/>" + distInfo;
 		}
 	}
 );			
