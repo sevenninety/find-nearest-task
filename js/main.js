@@ -15,7 +15,7 @@ define([
     function(parser, dom, number, Map, FeatureLayer, webMercatorUtils, Query, QueryTask, FindNearestParameters, FindNearestTask) {
     	var app = {
     		// The feature layer to query
-			layerUrl: "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/1",
+			layerUrl: "http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0",
 			// Feature layer to work with
 			featureLayer: null, 
 			// Cached featureSet

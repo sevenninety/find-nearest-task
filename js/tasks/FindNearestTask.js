@@ -40,7 +40,7 @@ define([
 			// Calculate distance for each feature
 			if (featureSet.geometryType === "esriGeometryPoint") {
 				array.forEach(features, function(feature) {
-					candidates.push(new FindNearestResult(feature, feature, distance(point, feature.geometry)));
+					candidates.push(new FindNearestResult(feature.geometry, feature, distance(point, feature.geometry)));
 				});
 				
 				result = this._getMin(candidates);
