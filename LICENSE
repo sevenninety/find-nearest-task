@@ -1,16 +1,3 @@
-# find-nearest-task
-## A client-side Find Nearest Task for the Esri API for JavaScript. 
-
-The code is a sample task to perform a client-side find nearest using the Esri JS API. It currently works for
-points, lines and polygons and find the nearest feature, distance and nearest point. 
-Works by a map click or mouse move event.
-
-## Getting Started
- * Clone the repository using ``git clone --recursive https://github.com/sevenninety/find-nearest-task.git``.
- * Samples of usage to come!
-
-## Copyright and License
-
 The MIT License (MIT)
 
 Copyright (c) 2013 Andy Freeman
@@ -32,4 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-

@@ -1,0 +1,17 @@
+{
+	"name": "find-nearest-task",
+	"description": "Sample code for a client-side find nearest task using the Esri JS API",
+	"version": "1.0",
+	"main": "main",
+	"dependencies": {
+		"esri-js-api": "3.5"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/sevenninety/find-nearest-task/blob/master/LICENSE"
+		}
+	],
+	"homepage": "https://github.com/sevenninety/find-nearest-task/",
+	"readmeFilename": "README.md"
+}
