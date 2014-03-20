@@ -1,10 +1,13 @@
 {
 	"name": "find-nearest-task",
-	"description": "Sample code for a client-side find nearest task using the Esri JS API",
-	"version": "1.0",
+	"description": "Client-side find nearest task using the Esri JS API",
+	"version": "1.1.0",
 	"main": "main",
 	"dependencies": {
-		"esri-js-api": "3.5"
+		"express": "3.x"
+	},
+	"deveDependencies": {
+		"jshint": "2.x"
 	},
 	"licenses": [
 		{
