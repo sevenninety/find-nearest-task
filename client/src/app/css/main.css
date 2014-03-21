@@ -1,0 +1,23 @@
+html, body, #map {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+#coords {
+	position: absolute;
+	left: 10px;
+	bottom: 5px;
+	color: #000;
+	z-index: 50;
+	background-color: white;
+	padding: 10px
+}
+#info {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	color: #000;
+	z-index: 50;
+	background-color: white;
+	padding: 10px
+}
