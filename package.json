@@ -7,7 +7,8 @@
 		"express": "3.x"
 	},
 	"deveDependencies": {
-		"jshint": "2.x"
+		"jshint": "2.x",
+		"nodemon": "1.x"
 	},
 	"licenses": [
 		{

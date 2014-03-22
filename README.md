@@ -4,16 +4,18 @@
 The sample is a task to perform a client-side find nearest using the Esri JS API. It currently works for
 points, lines and polygons and finds the nearest feature, distance and nearest point (useful for debugging). 
 
-## Getting Started
- * Clone the repository using ``git clone --recursive https://github.com/sevenninety/find-nearest-task.git``.
+Features
+Client-side find nearest task for points, lines or polygons. Configurable number of features to return. Output is an array of nearest features, distances and nearest point. Works with either planar or geodesic spatial references.
 
+Instructions
+1. Download and unzip the .zip file or clone the repo.
+2 .Web-enable the client directory or run server.js from node
+3. Access the .html page
 
 
 ## Copyright and License
 
 The MIT License (MIT)
-
-Copyright (c) 2014 Andy Freeman
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
