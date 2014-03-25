@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-		<title>Find Nearest Polygons</title>
+		<title>Find Nearest Polylines</title>
     	<link rel="stylesheet" href="//js.arcgis.com/3.9/js/esri/css/esri.css">
     	<link rel="stylesheet" href="src/app/css/layout.css">
 
@@ -55,15 +55,15 @@
 					// Create the map
 					map = new Map("map-canvas", {
 						basemap: "national-geographic",
-						center: [-98.0, 38.0],
-						zoom: 5
+						center: [-119.511, 35.473],
+						zoom: 8
 					});
 					
 					map.on("load", function() {
 						// Create a feature layer
-						featureLayer = new FeatureLayer("http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2", {
+						featureLayer = new FeatureLayer("http://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/1", {
 							mode: FeatureLayer.MODE_ONDEMAND,
-							outFields: ["objectid", "state_name"]
+							outFields: ["objectid", "route"]
 						});		
 						
 						// Set the selection symbol
@@ -93,14 +93,7 @@
 
 					// Sets the symbol when a selection is made
 					function setSelectionSymbol(featureLayer) {
-						var symbol = new SimpleFillSymbol(
-				          SimpleFillSymbol.STYLE_SOLID,
-				          new SimpleLineSymbol(
-				            SimpleLineSymbol.STYLE_SOLID,
-				            new Color([105, 105, 105]),
-				            4
-				          ), new Color([255, 255, 0, 0.25])
-				        );
+						var symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 255, 0]), 4);
 							
 						// Apply symbol	
 						featureLayer.setSelectionSymbol(symbol);
@@ -125,7 +118,7 @@
 						query.where = "1=1"; // Get everything 
 						query.geometry = new Circle({
 							center: evt.geometry,
-							radius: 500,
+							radius: 100,
 							radiusUnit: Units.MILES
 						});
 						
@@ -192,8 +185,8 @@
 		<div id="toolbar-canvas">
 			<h3>Find Nearest Polygons</h3>
 			<div class="description">
-				<p>Demonstrates Find Nearest polygon from a map click.</p>
-				<p>Click 'Draw' then click on the map to find the nearest 5 states within 500 miles</p>
+				<p>Demonstrates Find Nearest polyline from a map click.</p>
+				<p>Click 'Draw' then click on the map to find the nearest 5 roads within 100 miles</p>
 			</div>
 			<div>
 				<label for="select">Draw Point:</label><br/>
