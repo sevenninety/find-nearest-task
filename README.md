@@ -10,7 +10,9 @@ Client-side find nearest task for points, lines or polygons. Configurable number
 ## Instructions
 1. Download and unzip the .zip file or clone the repo.
 2. Web-enable the client directory or run server.js from node
-3. Access the .html page
+3. Access the .html pages
+ 
+Samples added for working with points, lines and polygons.
 
 
 ## Copyright and License
